@@ -1,0 +1,15 @@
+header {
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  width: auto;
+  background: #A18B40;
+  background-image: url("https://www.transparenttextures.com/patterns/transparent-square-tiles.png");
+}
+
+.user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0em;
+}
