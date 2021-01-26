@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/new-tweets.css" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- External JS -->
@@ -46,7 +47,16 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <p>Lorem Ipsum is the single greatest threat. We are not - we are not keeping up with other websites. Lorem Ipsum best not make any more threats to your website. It will be met with fire and fury like the world has never seen. Does everybody know that pig named Lorem Ipsum? An ‘extremely credible source’ has called my office and told me that Barack Obama’s placeholder text is a fraud.</p>
+      <section class="new-tweet">
+        <form class="new-tweet" action="/tweets" method="POST">
+          <label for="tweet-text">What are you humming about?</label>
+          <input class="new-tweet" name="text" id="tweet-text"></input>
+          <div class="new-tweet">
+            <button class="new-tweet" type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
     </main>
   </body>
 </html>
