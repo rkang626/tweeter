@@ -37,7 +37,7 @@ body {
   justify-content: space-between;
 }
 
-input:focus {
+textarea:focus {
   outline: none;
 }
 

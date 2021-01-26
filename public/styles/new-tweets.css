@@ -7,12 +7,12 @@ section.new-tweet {
   flex-direction: column;
 }
 
-input.new-tweet {
+textarea.new-tweet {
   display: flex;
   background-color: #f4f1ec;
   font-size: 18px;
   width: 100%;
-  height: 30px;
+  height: 32px;
   margin-top: 1em;
   margin-bottom: 1em;
   border: none;
@@ -30,4 +30,8 @@ div.new-tweet {
 button.new-tweet {
   color: #FFFFFF;
   background-color: #4056A1;
+}
+
+output.counter[counterColor="red"] {
+  color: red;
 }
