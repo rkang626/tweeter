@@ -21,15 +21,27 @@ body {
   font-family: Source Sans Pro, sans-serif
 }
 
-main {
+/*
+ * Additional CSS can be defined below or in other CSS files, as per instructions
+ */
+
+ main {
   width: 90%;
   margin: auto;
+}
+
+.group {
+  display: flex;
+  width: 100%;
+  margin: 1.5em;
+  justify-content: space-between;
+}
+
+input:focus {
+  outline: none;
 }
 
 h2 {
   color: #FFFFFF;
   font-weight: 400;
 }
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
