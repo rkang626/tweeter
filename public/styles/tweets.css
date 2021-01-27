@@ -2,6 +2,8 @@ article.tweet {
   display: flex;
   flex-direction: column;
   border-style: solid;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 article.tweet:hover {
