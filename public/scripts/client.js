@@ -74,9 +74,15 @@ $(document).ready(function() {
     const tweetBody = $('textarea.new-tweet').val();
 
     if (!tweetBody) {
-      alert("invalid input");
+      $("#error").empty();
+      $("#error").append('<span><i class="fas fa-exclamation-triangle"></i></span><span>Type in your tweet before submitting!</span><span><i class="fas fa-exclamation-triangle"></i></span>');
+      $("#error").removeClass("hide");
+      $("#error").addClass("show");
     } else if (tweetBody.length > 140) {
-      alert("too long");
+      $("#error").empty();
+      $("#error").append('<span><i class="fas fa-exclamation-triangle"></i></span><span>Your tweet is too long! Character limit is 140.</span><span><i class="fas fa-exclamation-triangle"></i></span>');
+      $("#error").removeClass("hide");
+      $("#error").addClass("show");
     } else {
       $.ajax({
         url: "/tweets",

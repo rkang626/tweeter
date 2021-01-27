@@ -26,3 +26,20 @@ button.new-tweet {
 output.counter[counterColor="red"] {
   color: red;
 }
+
+div.hide {
+  display: none;
+}
+
+div.show {
+  display: flex;
+  margin-bottom: 1em;
+  border-style: solid;
+  color: red;
+  justify-content: center;
+}
+
+div.show > span {
+  display: flex;
+  margin: 0.5em;
+}
