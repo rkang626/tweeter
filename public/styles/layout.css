@@ -30,6 +30,15 @@ body {
   margin: auto;
 }
 
+section.container {
+  display: flex;
+  width: 90%;
+  margin: auto;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  flex-direction: column;
+}
+
 .group {
   display: flex;
   width: 100%;

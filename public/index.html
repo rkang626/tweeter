@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweets.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -33,11 +34,12 @@
         <span id="logo">tweeter</span>
         <span id="write-new">
           <span><b>Write</b> a new tweet</span>
-          <span><i class="fas fa-angle-double-down" style="color:red"></i></span>
+          <i class="fas fa-angle-double-down" style="color:red"></i>
         </span>
       </section>
     </nav>
 
+    <!-- Header that shows user profile -->
     <header>
       <div class="user">
           <img src="/images/profile-hex.png"> 
@@ -50,9 +52,10 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <section class="new-tweet">
+
+      <section class="container">
         <form class="new-tweet" action="/tweets" method="POST">
-          <label for="tweet-text">What are you humming about?</label>
+          <label for="tweet-text"><b>What are you humming about?</b></label>
           <textarea class="new-tweet" name="text" id="tweet-text"></textarea>
           <div class="new-tweet">
             <button class="new-tweet" type="submit">Tweet</button>
@@ -60,6 +63,35 @@
           </div>
         </form>
       </section>
+
+      <section class="container">
+        <article class="tweet">
+          <header class="tweet">
+            <div class="tweet-header">
+              <span style="padding-right: 0.5em;"><img src="https://i.imgur.com/73hZDYK.png" style="width:40px;height:40px;"></span>
+              <span>Newton</span>
+            </div>
+            <div class="tweet-header handle">
+              @SirIsaac
+            </div>
+          </header>
+          <div class="tweet">
+            If I have seen further it is by standing on the shoulders of giants
+          </div>
+          <hr>
+          <footer class="tweet">
+            <div class="tweet-footer">
+              <span>10 days ago</span>
+            </div>
+            <div class="tweet-footer">
+              <i class="fas fa-flag icon"></i>
+              <i class="fas fa-retweet icon"></i>
+              <i class="fas fa-heart icon"></i>
+            </div>
+          </footer>
+        </article>
+      </section>
+
     </main>
   </body>
 </html>
