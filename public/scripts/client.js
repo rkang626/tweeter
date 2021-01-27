@@ -4,31 +4,6 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-const tweetData = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1611589360892
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd"
-    },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1611675760892
-  }
-];
-
 const renderTweets = function(tweets) {
   let htmlElement = '';
   for (tweet of tweets) {
@@ -72,6 +47,34 @@ const createTweetElement = function(tweet) {
 }
 
 $(document).ready(function() {
-  const $tweet = renderTweets(tweetData);
-  $('#tweets-container').append($tweet); 
+
+  const loadTweets = function() {
+    $.ajax({
+      url: "/tweets",
+      method: "GET",
+    })
+    .then(function(result) {
+      const $tweet = renderTweets(result);
+      $('#tweets-container').append($tweet); 
+    });
+  }
+
+  loadTweets()
+
+  // const $tweet = renderTweets(tweetData);
+  // $('#tweets-container').append($tweet); 
+
+  $("form.new-tweet").on('submit', function (event) {
+    event.preventDefault();
+    const tweet = $('form.new-tweet').serialize();
+
+    $.ajax({
+      url: "/tweets",
+      method: "POST",
+      data: tweet
+    })
+    // .then(function() {
+    // })
+  })
+
 })
