@@ -6,10 +6,16 @@
 
 const renderTweets = function(tweets) {
   let htmlElement = '';
-  for (tweet of tweets) {
+  for (tweet of tweets.reverse()) {
     htmlElement += createTweetElement(tweet);
   }
   return htmlElement;
+}
+
+const escape = function(str) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
 }
 
 const createTweetElement = function(tweet) {
@@ -23,16 +29,16 @@ const createTweetElement = function(tweet) {
   <article class="tweet">
     <header class="tweet">
       <div class="tweet-header">
-          <span style="padding-right: 0.5em;"><img src="${avatar}" style="width:40px;height:40px;"></span>
-          <span>${name}</span>
+          <span style="padding-right: 0.5em;"><img src="${escape(avatar)}" style="width:40px;height:40px;"></span>
+          <span>${escape(name)}</span>
       </div>
-      <div class="tweet-header handle">${handle}</div>
+      <div class="tweet-header handle">${escape(handle)}</div>
     </header>
-    <div class="tweet">${content}</div>
+    <div class="tweet">${escape(content)}</div>
     <hr>
     <footer class="tweet">
       <div class="tweet-footer">
-          <span>${daysAgo} days ago</span>
+          <span>${escape(daysAgo)} days ago</span>
       </div>
       <div class="tweet-footer">
           <i class="fas fa-flag icon"></i>
@@ -55,7 +61,7 @@ $(document).ready(function() {
     })
     .then(function(result) {
       const $tweet = renderTweets(result);
-      $('#tweets-container').append($tweet); 
+      $('#tweets-container').append($tweet);
     });
   }
 
@@ -66,7 +72,6 @@ $(document).ready(function() {
 
     const tweet = $('form.new-tweet').serialize();
     const tweetBody = $('textarea.new-tweet').val();
-    console.log(tweetBody);
 
     if (!tweetBody) {
       alert("invalid input");
@@ -76,10 +81,10 @@ $(document).ready(function() {
       $.ajax({
         url: "/tweets",
         method: "POST",
-        data: tweet
+        data: tweet,
+        success: setTimeout(loadTweets, 1000)
       })
     }
-
-  })
+  }) 
 
 })
