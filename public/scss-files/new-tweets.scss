@@ -1,23 +1,26 @@
 /* Bring in variables */
+@use 'variables';
+
 /* Same layout for all screen sizes */
+
 /* Styling for the textarea section of the form */
 textarea.new-tweet {
   display: flex;
-  background-color: #f4f1ec;
+  background-color: variables.$bg-color-primary;
   font-size: 18px;
   width: 100%;
   height: 32px;
   margin-top: 1em;
   margin-bottom: 1em;
   border: none;
-  border-bottom: 4px solid #545149;
+  border-bottom: 4px solid variables.$font-color-primary;
   outline: none;
 }
 
 /* Styling for the new tweet form elements */
 div.new-tweet {
   display: flex;
-  font-family: Bungee, sans-serif;
+  font-family: variables.$font-secondary;
   width: 100%;
   flex-direction: row;
   justify-content: space-between;
@@ -33,12 +36,12 @@ div.tweet-button {
 
 /* Styling for the new tweet button */
 button.new-tweet {
-  color: #FFFFFF;
-  background-color: #4056A1;
+  color: variables.$font-color-secondary;
+  background-color: variables.$bg-color-nav;
 }
 
 /* Styling for the character counter */
-output.counter[counterColor=red] {
+output.counter[counterColor="red"] {
   color: red;
 }
 
@@ -46,12 +49,10 @@ output.counter[counterColor=red] {
 #error {
   font-size: 16px;
   color: red;
-  font-family: Source Sans Pro, sans-serif;
+  font-family: variables.$font-primary;
   margin-left: 1em;
 }
 
 #error > i {
   margin-right: 0.5em;
 }
-
-/*# sourceMappingURL=new-tweets.css.map */
