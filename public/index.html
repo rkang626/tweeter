@@ -42,7 +42,7 @@
     <!-- Header that shows user profile -->
     <header>
       <div class="user">
-          <img src="/images/profile-hex.png"> 
+          <img src="/images/profile-hex.png">
       </div>
       <br>
       <div class="user">
@@ -53,8 +53,10 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
 
+      <!-- Element for submitting new tweet -->
       <section class="container">
         <div id="error" class="hide">
+          <!-- Error message gets inserted in here -->
         </div>
         <form class="new-tweet" action="/tweets" method="POST">
           <label for="tweet-text"><b>What are you humming about?</b></label>
@@ -66,6 +68,7 @@
         </form>
       </section>
 
+      <!-- List of all tweets -->
       <section class="container" id="tweets-container">
       <!-- Tweets get inserted in here -->
       </section>

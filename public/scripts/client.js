@@ -4,20 +4,23 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+// Function to take consolidate all tweet elements
 const renderTweets = function(tweets) {
   let htmlElement = '';
-  for (tweet of tweets.reverse()) {
+  for (const tweet of tweets.reverse()) {
     htmlElement += createTweetElement(tweet);
   }
   return htmlElement;
-}
+};
 
+// Function to identify insecure user input and ensure it doesn't get interpretted as code
 const escape = function(str) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
-}
+};
 
+// Function to create a new tweet element after user submission
 const createTweetElement = function(tweet) {
   const name = tweet.user.name;
   const avatar = tweet.user.avatars;
@@ -47,50 +50,55 @@ const createTweetElement = function(tweet) {
       </div>
     </footer>
   </article>
-  `
+  `;
 
   return $tweet;
-}
+};
 
+// jQuery funtions to update index.html
 $(document).ready(function() {
 
+  // Load all existing tweets on page load
   const loadTweets = function() {
     $.ajax({
       url: "/tweets",
       method: "GET",
     })
-    .then(function(result) {
-      const $tweet = renderTweets(result);
-      $('#tweets-container').append($tweet);
-    });
-  }
+      .then(function(result) {
+        const $tweet = renderTweets(result);
+        $('#tweets-container').empty();
+        $('#tweets-container').append($tweet);
+      });
+  };
+  loadTweets();
 
-  loadTweets()
-
-  $("form.new-tweet").on('submit', function (event) {
+  // When a new tweet is submitted, display the tweet in the body without a page refresh
+  $("form.new-tweet").on('submit', function(event) {
     event.preventDefault();
 
     const tweet = $('form.new-tweet').serialize();
     const tweetBody = $('textarea.new-tweet').val();
 
-    if (!tweetBody) {
+    if (!tweetBody) {  // Validate that tweer is not empty
       $("#error").empty();
       $("#error").append('<span><i class="fas fa-exclamation-triangle"></i></span><span>Type in your tweet before submitting!</span><span><i class="fas fa-exclamation-triangle"></i></span>');
       $("#error").removeClass("hide");
       $("#error").addClass("show");
-    } else if (tweetBody.length > 140) {
+    } else if (tweetBody.length > 140) {  // Validate that tweet is not over 140 characters
       $("#error").empty();
       $("#error").append('<span><i class="fas fa-exclamation-triangle"></i></span><span>Your tweet is too long! Character limit is 140.</span><span><i class="fas fa-exclamation-triangle"></i></span>');
       $("#error").removeClass("hide");
       $("#error").addClass("show");
-    } else {
+    } else {  // Post a valid tweet
       $.ajax({
         url: "/tweets",
         method: "POST",
         data: tweet,
-        success: setTimeout(loadTweets, 1000)
-      })
+        success: loadTweets
+      });
+      $("textarea.new-tweet").val('');
+      $("textarea.new-tweet").parent().children("div").children("output").val(140);
     }
-  }) 
+  });
 
-})
+});
