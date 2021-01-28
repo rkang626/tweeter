@@ -1,3 +1,6 @@
+/* Same layout for all screen sizes */
+
+/* Styling for the textarea section of the form */
 textarea.new-tweet {
   display: flex;
   background-color: #f4f1ec;
@@ -8,8 +11,10 @@ textarea.new-tweet {
   margin-bottom: 1em;
   border: none;
   border-bottom: 4px solid #545149;
+  outline: none;
 }
 
+/* Styling for the new tweet form elements */
 div.new-tweet {
   display: flex;
   font-family: Bungee, sans-serif;
@@ -19,21 +24,25 @@ div.new-tweet {
   align-items: center;
 }
 
+/* Styling for the new tweet button */
 div.tweet-button {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
+/* Styling for the new tweet button */
 button.new-tweet {
   color: #FFFFFF;
   background-color: #4056A1;
 }
 
+/* Styling for the character counter */
 output.counter[counterColor="red"] {
   color: red;
 }
 
+/* Styling for the error section */
 #error {
   font-size: 16px;
   color: red;
@@ -44,20 +53,3 @@ output.counter[counterColor="red"] {
 #error > i {
   margin-right: 0.5em;
 }
-
-/* div.hide {
-  display: none;
-}
-
-div.show {
-  display: flex;
-  color: red;
-  border-style: solid;
-  margin-bottom: 1em;
-  justify-content: center;
-}
-
-div.show > span {
-  display: flex;
-  margin: 0.5em;
-} */

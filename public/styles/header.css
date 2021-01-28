@@ -1,3 +1,6 @@
+/* Layout for small screens */
+
+/* Styling for the header section */
 header {
   display: flex;
   background-color: #A18B40;
@@ -8,6 +11,7 @@ header {
   justify-content: center;
 }
 
+/* Styling for the header elements */
 .user {
   display: flex;
   flex-direction: column;
@@ -24,4 +28,4 @@ header {
     flex-shrink: 2;
   }
   
-  }
+}

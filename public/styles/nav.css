@@ -1,3 +1,6 @@
+/* Layout for small screens */
+
+/* Styling for the nav bar */
 nav {
   display: flex;
   background-color: #A18B40;
@@ -8,12 +11,22 @@ nav {
   width: 100%;
 }
 
+/* Styling for the nav elements */
+.nav-bar {
+  display: flex;
+  width: 100%;
+  margin: 1.5em;
+  justify-content: space-between;
+}
+
+/* The tweeter logo */
 #logo {
   display: flex;
   font-size: 36px;
   font-family: Bungee, sans-serif;
 }
 
+/* The compose tweet button on the right */
 #write-new {
   display: flex;
   flex-direction: column;

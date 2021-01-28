@@ -4,7 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-// Function to take consolidate all tweet elements
+// Function to consolidate all tweet elements
 const renderTweets = function(tweets) {
   let htmlElement = '';
   for (const tweet of tweets.reverse()) {
@@ -13,14 +13,14 @@ const renderTweets = function(tweets) {
   return htmlElement;
 };
 
-// Function to identify insecure user input and ensure it doesn't get interpretted as code
+// Function to ensure user input doesn't get interpreted as code
 const escape = function(str) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 };
 
-// Function to create a new tweet element after user submission
+// Function to create a new tweet element after form submission
 const createTweetElement = function(tweet) {
   const name = tweet.user.name;
   const avatar = tweet.user.avatars;
@@ -32,7 +32,7 @@ const createTweetElement = function(tweet) {
   <article class="tweet">
     <header class="tweet">
       <div class="tweet-header">
-          <span style="padding-right: 0.5em;"><img src="${escape(avatar)}" style="width:40px;height:40px;"></span>
+          <span class="avatar"><img src="${escape(avatar)}"></span>
           <span>${escape(name)}</span>
       </div>
       <div class="tweet-header handle">${escape(handle)}</div>
@@ -72,14 +72,14 @@ $(document).ready(function() {
   };
   loadTweets();
 
-  // When a new tweet is submitted, display the tweet in the body without a page refresh
+  // When a new tweet is submitted, display the tweet in the body without requiring a page refresh
   $("form.new-tweet").on('submit', function(event) {
     event.preventDefault();
 
     const tweet = $('form.new-tweet').serialize();
     const tweetBody = $('textarea.new-tweet').val();
 
-    if (!tweetBody) {  // Validate that tweer is not empty
+    if (!tweetBody) {  // Validate that tweet is not empty
       $("#error").empty();
       $("#error").append('<i class="fas fa-exclamation-triangle"></i>Type in your tweet before submitting!');
       $("#error").removeClass("hide");
@@ -89,7 +89,7 @@ $(document).ready(function() {
       $("#error").append('<i class="fas fa-exclamation-triangle"></i>Your tweet is too long! Character limit is 140.');
       $("#error").removeClass("hide");
       $("#error").addClass("show");
-    } else {  // Post a valid tweet
+    } else {  // Post valid tweet
       $("#error").empty();
       $("#error").removeClass("show");
       $("#error").addClass("hide");

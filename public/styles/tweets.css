@@ -1,3 +1,6 @@
+/* Layout for small screens */
+
+/* Styling for each tweet box */
 article.tweet {
   display: flex;
   border-style: solid;
@@ -6,6 +9,7 @@ article.tweet {
   flex-direction: column;
 }
 
+/* Add shadow when tweet is hovered over */
 article.tweet:hover {
   display: flex;
   box-shadow: 5px 5px grey;
@@ -13,6 +17,7 @@ article.tweet:hover {
   flex-direction: column;
 }
 
+/* Styling for the header of the tweet */
 header.tweet {
   display: flex;
   background: #f4f1ec;
@@ -23,6 +28,7 @@ header.tweet {
   align-items: center;
 }
 
+/* Styling for the header elements */
 .tweet-header {
   display: flex;
   font-size: 20px;
@@ -33,15 +39,28 @@ header.tweet {
   align-items: center;
 }
 
+/* Styling for the avatar */
+.avatar {
+  padding-right: 0.5em;
+}
+
+.avatar > img {
+  width: 40px;
+  height: 40px;
+}
+
+/* Styling for the handle */
 .handle {
   display: none;
 }
 
+/* Only show the handle when tweet is hovered over */
 article.tweet:hover .handle {
   display: flex;
   color: lightgray;
 }
 
+/* Styling for the tweet content */
 div.tweet {
   display: flex;
   margin-top: 1.5em;
@@ -51,6 +70,7 @@ div.tweet {
   align-items: center;
 }
 
+/* Styling for the line that splits footer */
 hr {
   border: 0;
   background-color:#545149;
@@ -60,6 +80,7 @@ hr {
   margin-bottom: 0em;
 }
 
+/* Styling for the footer of the tweet */
 footer.tweet {
   display: flex;
   font-size: 14px;
@@ -70,11 +91,13 @@ footer.tweet {
   justify-content: space-between;
 }
 
+/* Styling for the footer elements */
 .tweet-footer {
   display: flex;
   margin-top: 1em;
 }
 
+/* Styling for the icons in the footer */
 .icon {
   display: flex;
   color: #4056A1;
@@ -87,6 +110,10 @@ footer.tweet {
 
   header.tweet {
     margin: 0em;
+  }
+
+  #tweets-container {
+    margin-top: 2em;
   }
   
   }

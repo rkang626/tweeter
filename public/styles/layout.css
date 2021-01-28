@@ -26,11 +26,15 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
+ /* Layout for small screens */
+
+ /* Styling for the main section that contains the tweet form and list of all tweets */
  main {
   width: 90%;
   margin: auto;
 }
 
+/* The tweet form and list of all tweets are each a section.container under the main element */
 section.container {
   display: flex;
   width: 90%;
@@ -40,17 +44,7 @@ section.container {
   flex-direction: column;
 }
 
-.group {
-  display: flex;
-  width: 100%;
-  margin: 1.5em;
-  justify-content: space-between;
-}
-
-textarea:focus {
-  outline: none;
-}
-
+/* Styling for level 2 headers */
 h2 {
   color: #FFFFFF;
   font-weight: 400;
@@ -61,6 +55,7 @@ h2 {
 
 @media only screen and (min-width: 1024px) {
 
+/* Header and main are side by side on big screens */
 body {
   display: flex;
   flex-direction: row;
@@ -69,8 +64,8 @@ body {
 main {
   display: flex;
   margin: 2em;
-  flex-grow: 3;
   flex-direction: column;
+  flex-grow: 3;
 }
 
 section.container {

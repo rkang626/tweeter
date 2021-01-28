@@ -30,7 +30,7 @@
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
-      <section class="group">
+      <section class="nav-bar">
         <span id="logo">tweeter</span>
         <span id="write-new">
           <span><b>Write</b> a new tweet</span>
@@ -42,7 +42,7 @@
     <!-- Header that shows user profile -->
     <header>
       <div class="user">
-          <img src="/images/profile-hex.png">
+          <img class="profile" src="/images/profile-hex.png">
       </div>
       <br>
       <div class="user">
@@ -53,7 +53,7 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
 
-      <!-- Element for submitting new tweet -->
+      <!-- Form for submitting a new tweet -->
       <section class="container">
         <form class="new-tweet" action="/tweets" method="POST">
           <label for="tweet-text"><b>What are you humming about?</b></label>
