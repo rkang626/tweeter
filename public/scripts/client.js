@@ -90,6 +90,9 @@ $(document).ready(function() {
       $("#error").removeClass("hide");
       $("#error").addClass("show");
     } else {  // Post a valid tweet
+      $("#error").empty();
+      $("#error").removeClass("show");
+      $("#error").addClass("hide");
       $.ajax({
         url: "/tweets",
         method: "POST",
