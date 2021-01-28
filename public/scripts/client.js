@@ -27,6 +27,12 @@ const createTweetElement = function(tweet) {
   const handle = tweet.user.handle;
   const content = tweet.content.text;
   const daysAgo = Math.floor((new Date().getTime() - new Date(tweet.created_at).getTime()) / (1000 * 60 * 60 * 24));
+  let createdAt = "Today";
+  if (daysAgo === 1) {
+    createdAt = daysAgo + " day ago";
+  } else if (daysAgo > 1) {
+    createdAt = daysAgo + " days ago";
+  }
 
   const $tweet = `
   <article class="tweet">
@@ -41,7 +47,7 @@ const createTweetElement = function(tweet) {
     <hr>
     <footer class="tweet">
       <div class="tweet-footer">
-          <span>${escape(daysAgo)} days ago</span>
+          <span>${createdAt}</span>
       </div>
       <div class="tweet-footer">
           <i class="fas fa-flag icon"></i>
