@@ -1,6 +1,6 @@
 # Tweeter Project
 
-Tweeter is a simple, single-page Twitter clone. It was built using HTML, CSS, JS, jQuery and AJAX for the front-end, and their Node and Express for the back-end.
+Tweeter is a simple, single-page Twitter clone. It was built using HTML, CSS, JS, jQuery and AJAX for the front-end, and Node and Express for the back-end.
 
 This was a project built as part of the awesome Web Development bootcamp offered by [Lighthouse Labs](https://www.lighthouselabs.ca/).
 
@@ -21,11 +21,11 @@ This was a project built as part of the awesome Web Development bootcamp offered
 
 ## Final Product
 
-Layout on a big monitor:
+#### Layout on a big monitor:
 !["Homepage"](https://github.com/rkang626/tweeter/blob/master/docs/homepage.png)
 
-Layout on a smaller monitor:
+#### Layout on a smaller monitor:
 !["Small Screen"](https://github.com/rkang626/tweeter/blob/master/docs/small_screen.png)
 
-Tweets must be less than 140 characters!
+#### Tweets must be less than 140 characters!
 !["Error"](https://github.com/rkang626/tweeter/blob/master/docs/tweet_too_long.png)
