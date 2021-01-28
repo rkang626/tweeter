@@ -1,35 +1,35 @@
 article.tweet {
   display: flex;
-  flex-direction: column;
   border-style: solid;
   margin-top: 1em;
   margin-bottom: 1em;
+  flex-direction: column;
 }
 
 article.tweet:hover {
   display: flex;
-  flex-direction: column;
-  border-style: solid;
   box-shadow: 5px 5px grey;
+  border-style: solid;
+  flex-direction: column;
 }
 
 header.tweet {
   display: flex;
-  flex-direction: row;
-  height: auto;
   background: #f4f1ec;
-  align-items: center;
+  height: auto;
+  flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 }
 
 .tweet-header {
   display: flex;
+  font-size: 20px;
   margin-top: 0.5em;
   margin-bottom: 0.5em;
   margin-left: 20px;
   margin-right: 20px;
   align-items: center;
-  font-size: 20px;
 }
 
 .handle {
@@ -52,8 +52,8 @@ div.tweet {
 
 hr {
   border: 0;
-  width: 98%;               
   background-color:#545149;
+  width: 98%;              
   height: 3px;
   margin-top: 1em;
   margin-bottom: 0em;
@@ -61,12 +61,12 @@ hr {
 
 footer.tweet {
   display: flex;
+  font-size: 14px;
   margin-left: 2em;
   margin-right: 2em;
   margin-bottom: 1em;
   align-items: center;
   justify-content: space-between;
-  font-size: 14px;
 }
 
 .tweet-footer {
@@ -76,6 +76,6 @@ footer.tweet {
 
 .icon {
   display: flex;
-  margin-left: 0.5em;
   color: #4056A1;
+  margin-left: 0.5em;
 }

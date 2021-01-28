@@ -33,9 +33,9 @@ div.hide {
 
 div.show {
   display: flex;
-  margin-bottom: 1em;
-  border-style: solid;
   color: red;
+  border-style: solid;
+  margin-bottom: 1em;
   justify-content: center;
 }
 
