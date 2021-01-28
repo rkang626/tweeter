@@ -1,10 +1,13 @@
 /* Bring in variables */
+@use 'variables';
+
 /* Layout for small screens */
+
 /* Styling for the nav bar */
 nav {
   display: flex;
-  background-color: #A18B40;
-  color: #FFFFFF;
+  background-color: variables.$bg-color-secondary;
+  color: variables.$font-color-secondary;
   height: 120px;
   position: fixed;
   top: 0;
@@ -23,7 +26,7 @@ nav {
 #logo {
   display: flex;
   font-size: 36px;
-  font-family: Bungee, sans-serif;
+  font-family: variables.$font-secondary;
 }
 
 /* The compose tweet button on the right */
@@ -34,10 +37,11 @@ nav {
 }
 
 /* Layout for big screens */
-@media only screen and (min-width: 1024px) {
-  nav {
-    background-color: #4056A1;
-  }
-}
 
-/*# sourceMappingURL=nav.css.map */
+@media only screen and (min-width: 1024px) {
+
+  nav {
+    background-color: variables.$bg-color-nav;
+  }
+  
+  }

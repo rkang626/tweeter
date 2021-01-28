@@ -1,4 +1,6 @@
 /* Bring in variables */
+@use 'variables';
+
 /*
  * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
  * https://css-tricks.com/international-box-sizing-awareness-day/
@@ -7,7 +9,6 @@
 html {
   box-sizing: border-box;
 }
-
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -15,20 +16,23 @@ html {
 /*
  * Global layout stuff
  */
+
 body {
-  color: #545149;
-  background-color: #f4f1ec;
+  color: variables.$font-color-primary;
+  background-color: variables.$bg-color-primary;
   font-size: 24px;
-  font-family: Source Sans Pro, sans-serif;
+  font-family: variables.$font-primary;
   margin-top: 120px;
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
-/* Layout for small screens */
-/* Styling for the main section that contains the tweet form and list of all tweets */
-main {
+
+ /* Layout for small screens */
+
+ /* Styling for the main section that contains the tweet form and list of all tweets */
+ main {
   width: 90%;
   margin: auto;
 }
@@ -51,23 +55,24 @@ h2 {
 }
 
 /* Layout for big screens */
+
 @media only screen and (min-width: 1024px) {
-  /* Header and main are side by side on big screens */
-  body {
-    display: flex;
-    flex-direction: row;
-  }
 
-  main {
-    display: flex;
-    margin: 2em;
-    flex-direction: column;
-    flex-grow: 3;
-  }
-
-  section.container {
-    margin: 0em;
-  }
+/* Header and main are side by side on big screens */
+body {
+  display: flex;
+  flex-direction: row;
 }
 
-/*# sourceMappingURL=layout.css.map */
+main {
+  display: flex;
+  margin: 2em;
+  flex-direction: column;
+  flex-grow: 3;
+}
+
+section.container {
+  margin: 0em;
+}
+
+}

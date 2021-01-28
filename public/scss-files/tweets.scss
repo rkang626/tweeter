@@ -1,5 +1,8 @@
 /* Bring in variables */
+@use 'variables';
+
 /* Layout for small screens */
+
 /* Styling for each tweet box */
 article.tweet {
   display: flex;
@@ -20,7 +23,7 @@ article.tweet:hover {
 /* Styling for the header of the tweet */
 header.tweet {
   display: flex;
-  background: #f4f1ec;
+  background: variables.$bg-color-primary;
   height: auto;
   width: auto;
   flex-direction: row;
@@ -73,8 +76,8 @@ div.tweet {
 /* Styling for the line that splits footer */
 hr {
   border: 0;
-  background-color: #545149;
-  width: 98%;
+  background-color: variables.$font-color-primary;
+  width: 98%;              
   height: 3px;
   margin-top: 1em;
   margin-bottom: 0em;
@@ -100,12 +103,14 @@ footer.tweet {
 /* Styling for the icons in the footer */
 .icon {
   display: flex;
-  color: #4056A1;
+  color: variables.$bg-color-nav;
   margin-left: 0.5em;
 }
 
 /* Layout for big screens */
+
 @media only screen and (min-width: 1024px) {
+
   header.tweet {
     margin: 0em;
   }
@@ -113,6 +118,5 @@ footer.tweet {
   #tweets-container {
     margin-top: 2em;
   }
-}
-
-/*# sourceMappingURL=tweets.css.map */
+  
+  }
