@@ -56,3 +56,25 @@ h2 {
   font-weight: 400;
   margin: 0em;
 }
+
+/* Layout for big screens */
+
+@media only screen and (min-width: 1024px) {
+
+body {
+  display: flex;
+  flex-direction: row;
+}
+
+main {
+  display: flex;
+  margin: 2em;
+  flex-grow: 3;
+  flex-direction: column;
+}
+
+section.container {
+  margin: 0em;
+}
+
+}
