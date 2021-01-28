@@ -81,12 +81,12 @@ $(document).ready(function() {
 
     if (!tweetBody) {  // Validate that tweer is not empty
       $("#error").empty();
-      $("#error").append('<span><i class="fas fa-exclamation-triangle"></i></span><span>Type in your tweet before submitting!</span><span><i class="fas fa-exclamation-triangle"></i></span>');
+      $("#error").append('<i class="fas fa-exclamation-triangle"></i>Type in your tweet before submitting!');
       $("#error").removeClass("hide");
       $("#error").addClass("show");
     } else if (tweetBody.length > 140) {  // Validate that tweet is not over 140 characters
       $("#error").empty();
-      $("#error").append('<span><i class="fas fa-exclamation-triangle"></i></span><span>Your tweet is too long! Character limit is 140.</span><span><i class="fas fa-exclamation-triangle"></i></span>');
+      $("#error").append('<i class="fas fa-exclamation-triangle"></i>Your tweet is too long! Character limit is 140.');
       $("#error").removeClass("hide");
       $("#error").addClass("show");
     } else {  // Post a valid tweet
